@@ -1,0 +1,288 @@
+{
+  "meta": {
+    "marketplace": "US",
+    "currency": "USD",
+    "rate_card_year": 2026,
+    "non_peak_window": "2026-01-15 .. 2026-10-14",
+    "peak_window": "2026-10-15 .. 2027-01-14",
+    "fuel_surcharge_pct": 3.5,
+    "fuel_surcharge_effective_from": "2026-04-17",
+    "dim_divisor": 139,
+    "min_side_inches": 2.0,
+    "min_side_applies_to": ["small_bulky", "large_bulky", "extra_large_0_50", "extra_large_50_70", "extra_large_70_150", "extra_large_150_plus"],
+    "price_bands": {
+      "lt10": "price < 10.00",
+      "b1050": "10.00 <= price <= 50.00",
+      "gt50": "price > 50.00"
+    },
+    "sources": [
+      "2026 US FBA fulfillment fee changes - sellercentral.amazon.com/help/hub/reference/external/GABBX6GZPA8MSZGW",
+      "Product size tiers - sellercentral.amazon.com/help/hub/reference/external/GG5KW835AHDJCH8W",
+      "Dimensional weight - sellercentral.amazon.com/gp/help/external/G53Z9EKF8VVZVH29",
+      "Shipping weight - sellercentral.amazon.com/gp/help/external/GEVWP48HPBLEFJEY"
+    ],
+    "notes": [
+      "Fees below EXCLUDE the 3.5% fuel and logistics surcharge (applied on top since 2026-04-17).",
+      "Small standard uses UNIT weight only. Extra-large 150+ lb uses UNIT weight only.",
+      "All other tiers use the GREATER of unit weight or dimensional weight.",
+      "Dimensional weight = (longest x median x shortest) / 139, with a 2-inch minimum on median and shortest sides for bulky/extra-large tiers.",
+      "Girth = 2 x (median side + shortest side). Length plus girth = longest side + girth.",
+      "Non-apparel large standard above 3 lb: $0.08 per 4 oz interval. Apparel: $0.16 per half-lb interval.",
+      "Dangerous goods use a separate rate card and are NOT included in this file."
+    ]
+  },
+
+  "size_tiers": {
+    "order": ["small_standard", "large_standard", "small_bulky", "large_bulky", "extra_large_0_50", "extra_large_50_70", "extra_large_70_150", "extra_large_150_plus"],
+    "small_standard": {
+      "label_en": "Small standard",
+      "label_zh": "小号标准尺寸",
+      "weight_basis": "unit_weight",
+      "max_unit_oz": 16,
+      "max_longest_in": 15,
+      "max_median_in": 12,
+      "max_shortest_in": 0.75
+    },
+    "large_standard": {
+      "label_en": "Large standard",
+      "label_zh": "大号标准尺寸",
+      "weight_basis": "greater",
+      "max_ship_lb": 20,
+      "max_longest_in": 18,
+      "max_median_in": 14,
+      "max_shortest_in": 8
+    },
+    "small_bulky": {
+      "label_en": "Small Bulky",
+      "label_zh": "小号大件",
+      "weight_basis": "greater",
+      "max_ship_lb": 50,
+      "max_longest_in": 37,
+      "max_median_in": 28,
+      "max_shortest_in": 20,
+      "max_len_plus_girth_in": 130
+    },
+    "large_bulky": {
+      "label_en": "Large Bulky",
+      "label_zh": "大号大件",
+      "weight_basis": "greater",
+      "max_ship_lb": 50,
+      "max_longest_in": 59,
+      "max_median_in": 33,
+      "max_shortest_in": 33,
+      "max_len_plus_girth_in": 130
+    },
+    "extra_large_0_50": {
+      "label_en": "Extra-Large 0 to 50 lb",
+      "label_zh": "超大件 0-50 磅",
+      "weight_basis": "greater",
+      "max_ship_lb": 50
+    },
+    "extra_large_50_70": {
+      "label_en": "Extra-Large 50+ to 70 lb",
+      "label_zh": "超大件 50-70 磅",
+      "weight_basis": "greater",
+      "max_ship_lb": 70
+    },
+    "extra_large_70_150": {
+      "label_en": "Extra-Large 70+ to 150 lb",
+      "label_zh": "超大件 70-150 磅",
+      "weight_basis": "greater",
+      "max_ship_lb": 150
+    },
+    "extra_large_150_plus": {
+      "label_en": "Extra-Large 150+ lb",
+      "label_zh": "超大件 150 磅以上",
+      "weight_basis": "unit_weight",
+      "min_unit_lb": 150
+    }
+  },
+
+  "rates": {
+    "non_apparel": {
+      "non_peak": {
+        "small_standard": {
+          "type": "bands",
+          "rows": [
+            { "upto_oz": 2,  "lt10": 2.43, "b1050": 3.32, "gt50": 3.58 },
+            { "upto_oz": 4,  "lt10": 2.49, "b1050": 3.42, "gt50": 3.68 },
+            { "upto_oz": 6,  "lt10": 2.56, "b1050": 3.45, "gt50": 3.71 },
+            { "upto_oz": 8,  "lt10": 2.66, "b1050": 3.54, "gt50": 3.80 },
+            { "upto_oz": 10, "lt10": 2.77, "b1050": 3.68, "gt50": 3.94 },
+            { "upto_oz": 12, "lt10": 2.82, "b1050": 3.78, "gt50": 4.04 },
+            { "upto_oz": 14, "lt10": 2.92, "b1050": 3.91, "gt50": 4.17 },
+            { "upto_oz": 16, "lt10": 2.95, "b1050": 3.96, "gt50": 4.22 }
+          ]
+        },
+        "large_standard": {
+          "type": "bands",
+          "rows": [
+            { "upto_oz": 4,  "lt10": 2.91, "b1050": 3.73, "gt50": 3.99 },
+            { "upto_oz": 8,  "lt10": 3.13, "b1050": 3.95, "gt50": 4.21 },
+            { "upto_oz": 12, "lt10": 3.38, "b1050": 4.20, "gt50": 4.46 },
+            { "upto_oz": 16, "lt10": 3.78, "b1050": 4.60, "gt50": 4.86 },
+            { "upto_oz": 20, "lt10": 4.22, "b1050": 5.04, "gt50": 5.30 },
+            { "upto_oz": 24, "lt10": 4.60, "b1050": 5.42, "gt50": 5.68 },
+            { "upto_oz": 28, "lt10": 4.75, "b1050": 5.57, "gt50": 5.83 },
+            { "upto_oz": 32, "lt10": 5.00, "b1050": 5.82, "gt50": 6.08 },
+            { "upto_oz": 36, "lt10": 5.10, "b1050": 5.92, "gt50": 6.18 },
+            { "upto_oz": 40, "lt10": 5.28, "b1050": 6.10, "gt50": 6.36 },
+            { "upto_oz": 44, "lt10": 5.44, "b1050": 6.26, "gt50": 6.52 },
+            { "upto_oz": 48, "lt10": 5.85, "b1050": 6.67, "gt50": 6.93 }
+          ],
+          "tail": {
+            "from_oz": 48,
+            "to_oz": 320,
+            "interval_oz": 4,
+            "increment": 0.08,
+            "base": { "lt10": 6.15, "b1050": 6.97, "gt50": 7.23 }
+          }
+        },
+        "small_bulky":     { "type": "formula", "base": { "lt10": 6.78,   "b1050": 7.55,   "gt50": 7.55 },   "above_lb": 1,   "increment": 0.38 },
+        "large_bulky":     { "type": "formula", "base": { "lt10": 8.58,   "b1050": 9.35,   "gt50": 9.35 },   "above_lb": 1,   "increment": 0.38 },
+        "extra_large_0_50":   { "type": "formula", "base": { "lt10": 25.56,  "b1050": 26.33,  "gt50": 26.33 },  "above_lb": 1,   "increment": 0.38 },
+        "extra_large_50_70":  { "type": "formula", "base": { "lt10": 36.55,  "b1050": 37.32,  "gt50": 37.32 },  "above_lb": 51,  "increment": 0.75 },
+        "extra_large_70_150": { "type": "formula", "base": { "lt10": 50.55,  "b1050": 51.32,  "gt50": 51.32 },  "above_lb": 71,  "increment": 0.75 },
+        "extra_large_150_plus": { "type": "formula", "base": { "lt10": 194.18, "b1050": 194.95, "gt50": 194.95 }, "above_lb": 151, "increment": 0.19 }
+      },
+      "peak": {
+        "small_standard": {
+          "type": "bands",
+          "rows": [
+            { "upto_oz": 2,  "lt10": 2.62, "b1050": 3.51, "gt50": 3.77 },
+            { "upto_oz": 4,  "lt10": 2.68, "b1050": 3.61, "gt50": 3.87 },
+            { "upto_oz": 6,  "lt10": 2.76, "b1050": 3.65, "gt50": 3.91 },
+            { "upto_oz": 8,  "lt10": 2.86, "b1050": 3.74, "gt50": 4.00 },
+            { "upto_oz": 10, "lt10": 2.98, "b1050": 3.89, "gt50": 4.15 },
+            { "upto_oz": 12, "lt10": 3.03, "b1050": 3.99, "gt50": 4.25 },
+            { "upto_oz": 14, "lt10": 3.14, "b1050": 4.13, "gt50": 4.39 },
+            { "upto_oz": 16, "lt10": 3.17, "b1050": 4.18, "gt50": 4.44 }
+          ]
+        },
+        "large_standard": {
+          "type": "bands",
+          "rows": [
+            { "upto_oz": 4,  "lt10": 3.15, "b1050": 3.97, "gt50": 4.23 },
+            { "upto_oz": 8,  "lt10": 3.39, "b1050": 4.21, "gt50": 4.47 },
+            { "upto_oz": 12, "lt10": 3.66, "b1050": 4.48, "gt50": 4.74 },
+            { "upto_oz": 16, "lt10": 4.07, "b1050": 4.89, "gt50": 5.15 },
+            { "upto_oz": 20, "lt10": 4.52, "b1050": 5.34, "gt50": 5.60 },
+            { "upto_oz": 24, "lt10": 4.91, "b1050": 5.73, "gt50": 5.99 },
+            { "upto_oz": 28, "lt10": 5.07, "b1050": 5.89, "gt50": 6.15 },
+            { "upto_oz": 32, "lt10": 5.33, "b1050": 6.15, "gt50": 6.41 },
+            { "upto_oz": 36, "lt10": 5.47, "b1050": 6.29, "gt50": 6.55 },
+            { "upto_oz": 40, "lt10": 5.67, "b1050": 6.49, "gt50": 6.75 },
+            { "upto_oz": 44, "lt10": 5.84, "b1050": 6.66, "gt50": 6.92 },
+            { "upto_oz": 48, "lt10": 6.26, "b1050": 7.08, "gt50": 7.34 }
+          ],
+          "tail": {
+            "from_oz": 48,
+            "to_oz": 320,
+            "interval_oz": 4,
+            "increment": 0.08,
+            "base": { "lt10": 6.69, "b1050": 7.51, "gt50": 7.77 }
+          }
+        },
+        "small_bulky":     { "type": "formula", "base": { "lt10": 7.82,   "b1050": 8.59,   "gt50": 8.59 },   "above_lb": 1,   "increment": 0.38 },
+        "large_bulky":     { "type": "formula", "base": { "lt10": 9.62,   "b1050": 10.39,  "gt50": 10.39 },  "above_lb": 1,   "increment": 0.38 },
+        "extra_large_0_50":   { "type": "formula", "base": { "lt10": 28.29,  "b1050": 29.06,  "gt50": 29.06 },  "above_lb": 1,   "increment": 0.38 },
+        "extra_large_50_70":  { "type": "formula", "base": { "lt10": 39.36,  "b1050": 40.13,  "gt50": 40.13 },  "above_lb": 51,  "increment": 0.75 },
+        "extra_large_70_150": { "type": "formula", "base": { "lt10": 54.97,  "b1050": 55.74,  "gt50": 55.74 },  "above_lb": 71,  "increment": 0.75 },
+        "extra_large_150_plus": { "type": "formula", "base": { "lt10": 202.69, "b1050": 203.46, "gt50": 203.46 }, "above_lb": 151, "increment": 0.19 }
+      }
+    },
+
+    "apparel": {
+      "non_peak": {
+        "small_standard": {
+          "type": "bands",
+          "rows": [
+            { "upto_oz": 2,  "lt10": 2.62, "b1050": 3.51, "gt50": 3.77 },
+            { "upto_oz": 4,  "lt10": 2.64, "b1050": 3.54, "gt50": 3.80 },
+            { "upto_oz": 6,  "lt10": 2.68, "b1050": 3.59, "gt50": 3.85 },
+            { "upto_oz": 8,  "lt10": 2.81, "b1050": 3.69, "gt50": 3.95 },
+            { "upto_oz": 10, "lt10": 3.00, "b1050": 3.91, "gt50": 4.17 },
+            { "upto_oz": 12, "lt10": 3.10, "b1050": 4.09, "gt50": 4.35 },
+            { "upto_oz": 14, "lt10": 3.20, "b1050": 4.20, "gt50": 4.46 },
+            { "upto_oz": 16, "lt10": 3.30, "b1050": 4.25, "gt50": 4.51 }
+          ]
+        },
+        "large_standard": {
+          "type": "bands",
+          "rows": [
+            { "upto_oz": 4,  "lt10": 3.48, "b1050": 4.30, "gt50": 4.56 },
+            { "upto_oz": 8,  "lt10": 3.68, "b1050": 4.50, "gt50": 4.76 },
+            { "upto_oz": 12, "lt10": 3.90, "b1050": 4.72, "gt50": 4.98 },
+            { "upto_oz": 16, "lt10": 4.35, "b1050": 5.17, "gt50": 5.43 },
+            { "upto_oz": 20, "lt10": 5.05, "b1050": 5.87, "gt50": 6.13 },
+            { "upto_oz": 24, "lt10": 5.22, "b1050": 6.04, "gt50": 6.30 },
+            { "upto_oz": 28, "lt10": 5.32, "b1050": 6.14, "gt50": 6.40 },
+            { "upto_oz": 32, "lt10": 5.43, "b1050": 6.25, "gt50": 6.51 },
+            { "upto_oz": 36, "lt10": 5.78, "b1050": 6.60, "gt50": 6.86 },
+            { "upto_oz": 40, "lt10": 5.90, "b1050": 6.72, "gt50": 6.98 },
+            { "upto_oz": 44, "lt10": 5.95, "b1050": 6.77, "gt50": 7.03 },
+            { "upto_oz": 48, "lt10": 6.08, "b1050": 6.90, "gt50": 7.16 }
+          ],
+          "tail": {
+            "from_oz": 48,
+            "to_oz": 320,
+            "interval_oz": 8,
+            "increment": 0.16,
+            "base": { "lt10": 6.15, "b1050": 6.97, "gt50": 7.23 }
+          }
+        },
+        "small_bulky":     { "type": "formula", "base": { "lt10": 6.78,   "b1050": 7.55,   "gt50": 7.55 },   "above_lb": 1,   "increment": 0.38 },
+        "large_bulky":     { "type": "formula", "base": { "lt10": 8.58,   "b1050": 9.35,   "gt50": 9.35 },   "above_lb": 1,   "increment": 0.38 },
+        "extra_large_0_50":   { "type": "formula", "base": { "lt10": 25.56,  "b1050": 26.33,  "gt50": 26.33 },  "above_lb": 1,   "increment": 0.38 },
+        "extra_large_50_70":  { "type": "formula", "base": { "lt10": 36.55,  "b1050": 37.32,  "gt50": 37.32 },  "above_lb": 51,  "increment": 0.75 },
+        "extra_large_70_150": { "type": "formula", "base": { "lt10": 50.55,  "b1050": 51.32,  "gt50": 51.32 },  "above_lb": 71,  "increment": 0.75 },
+        "extra_large_150_plus": { "type": "formula", "base": { "lt10": 194.18, "b1050": 194.95, "gt50": 194.95 }, "above_lb": 151, "increment": 0.19 }
+      },
+      "peak": {
+        "small_standard": {
+          "type": "bands",
+          "rows": [
+            { "upto_oz": 2,  "lt10": 2.85, "b1050": 3.74, "gt50": 4.00 },
+            { "upto_oz": 4,  "lt10": 2.87, "b1050": 3.77, "gt50": 4.03 },
+            { "upto_oz": 6,  "lt10": 2.93, "b1050": 3.84, "gt50": 4.10 },
+            { "upto_oz": 8,  "lt10": 3.06, "b1050": 3.94, "gt50": 4.20 },
+            { "upto_oz": 10, "lt10": 3.27, "b1050": 4.18, "gt50": 4.44 },
+            { "upto_oz": 12, "lt10": 3.37, "b1050": 4.36, "gt50": 4.62 },
+            { "upto_oz": 14, "lt10": 3.49, "b1050": 4.49, "gt50": 4.75 },
+            { "upto_oz": 16, "lt10": 3.59, "b1050": 4.54, "gt50": 4.80 }
+          ]
+        },
+        "large_standard": {
+          "type": "bands",
+          "rows": [
+            { "upto_oz": 4,  "lt10": 3.79, "b1050": 4.61, "gt50": 4.87 },
+            { "upto_oz": 8,  "lt10": 4.00, "b1050": 4.82, "gt50": 5.08 },
+            { "upto_oz": 12, "lt10": 4.23, "b1050": 5.05, "gt50": 5.31 },
+            { "upto_oz": 16, "lt10": 4.69, "b1050": 5.51, "gt50": 5.77 },
+            { "upto_oz": 20, "lt10": 5.42, "b1050": 6.24, "gt50": 6.50 },
+            { "upto_oz": 24, "lt10": 5.59, "b1050": 6.41, "gt50": 6.67 },
+            { "upto_oz": 28, "lt10": 5.71, "b1050": 6.53, "gt50": 6.79 },
+            { "upto_oz": 32, "lt10": 5.82, "b1050": 6.64, "gt50": 6.90 },
+            { "upto_oz": 36, "lt10": 6.22, "b1050": 7.04, "gt50": 7.30 },
+            { "upto_oz": 40, "lt10": 6.34, "b1050": 7.16, "gt50": 7.42 },
+            { "upto_oz": 44, "lt10": 6.41, "b1050": 7.23, "gt50": 7.49 },
+            { "upto_oz": 48, "lt10": 6.54, "b1050": 7.36, "gt50": 7.62 }
+          ],
+          "tail": {
+            "from_oz": 48,
+            "to_oz": 320,
+            "interval_oz": 8,
+            "increment": 0.16,
+            "base": { "lt10": 6.82, "b1050": 7.64, "gt50": 7.90 }
+          }
+        },
+        "small_bulky":     { "type": "formula", "base": { "lt10": 7.82,   "b1050": 8.59,   "gt50": 8.59 },   "above_lb": 1,   "increment": 0.38 },
+        "large_bulky":     { "type": "formula", "base": { "lt10": 9.62,   "b1050": 10.39,  "gt50": 10.39 },  "above_lb": 1,   "increment": 0.38 },
+        "extra_large_0_50":   { "type": "formula", "base": { "lt10": 28.29,  "b1050": 29.06,  "gt50": 29.06 },  "above_lb": 1,   "increment": 0.38 },
+        "extra_large_50_70":  { "type": "formula", "base": { "lt10": 39.36,  "b1050": 40.13,  "gt50": 40.13 },  "above_lb": 51,  "increment": 0.75 },
+        "extra_large_70_150": { "type": "formula", "base": { "lt10": 54.97,  "b1050": 55.74,  "gt50": 55.74 },  "above_lb": 71,  "increment": 0.75 },
+        "extra_large_150_plus": { "type": "formula", "base": { "lt10": 202.69, "b1050": 203.46, "gt50": 203.46 }, "above_lb": 151, "increment": 0.19 }
+      }
+    }
+  }
+}
